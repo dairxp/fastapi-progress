@@ -5,6 +5,14 @@ from .globals import set_backend, get_backend
 from .state.base import StateBackend
 
 def init_progress(app: FastAPI, backend: StateBackend | None = None, prefix: str = "/ws/progress") -> None:
+    """
+    Injects the progress tracking WebSocket route into the FastAPI app.
+    
+    Args:
+        app: The FastAPI application instance.
+        backend: Optional StateBackend. Defaults to MemoryBackend.
+        prefix: URL prefix for the WebSocket route. Defaults to "/ws/progress".
+    """
     if backend:
         set_backend(backend)
 
