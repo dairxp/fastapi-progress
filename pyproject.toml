@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-progress"
-version = "0.1.1"
+version = "0.1.2"
 description = "Zero-config background task progress tracker for FastAPI using WebSockets."
 readme = "README.md"
 authors = [
