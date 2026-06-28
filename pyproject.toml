@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-progress"
-version = "0.1.0"
+version = "0.1.1"
 description = "Zero-config background task progress tracker for FastAPI using WebSockets."
 readme = "README.md"
 authors = [
@@ -13,6 +13,10 @@ dependencies = [
     "uvicorn[standard]>=0.49.0",
     "websockets>=16.0",
 ]
+
+[project.urls]
+Repository = "https://github.com/dairxp/fastapi-progress"
+Issues = "https://github.com/dairxp/fastapi-progress/issues"
 
 [build-system]
 requires = ["uv_build>=0.10.2,<0.11.0"]
