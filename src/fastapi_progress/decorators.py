@@ -9,13 +9,7 @@ P = ParamSpec("P")
 R = TypeVar("R")
 
 def track_progress(task_id_param: str | None = None) -> Callable[[Callable[P, Coroutine[Any, Any, R]]], Callable[P, Coroutine[Any, Any, R]]]:
-    """
-    Decorator to track the progress of an asynchronous background task.
-    
-    Args:
-        task_id_param: The name of the kwarg containing the task_id. 
-                       If not provided, a random UUID is generated.
-    """
+    # Tracks background task progress
     def decorator(func: Callable[P, Coroutine[Any, Any, R]]) -> Callable[P, Coroutine[Any, Any, R]]:
         @wraps(func)
         async def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:

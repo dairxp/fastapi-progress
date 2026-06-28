@@ -6,14 +6,7 @@ current_task_id: ContextVar[str | None] = ContextVar("current_task_id", default=
 
 class Progress:
     async def update(self, progress: int, message: str = "", metadata: dict[str, Any] | None = None) -> None:
-        """
-        Updates the progress of the current background task.
-        
-        Args:
-            progress: An integer representing the completion percentage (0-100).
-            message: An optional status message.
-            metadata: An optional dictionary for extra custom data.
-        """
+        # Updates task progress
         task_id = current_task_id.get()
         if task_id:
             backend = get_backend()
